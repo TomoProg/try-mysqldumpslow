@@ -1,0 +1,18 @@
+version: '3'
+
+volumes:
+  mysql_volume:
+    driver: 'local'
+
+services:
+  mysql:
+    build: ./mysql/
+    user: 1000:1000 # rootユーザだと権限のエラーが出るため追加 参考: https://belonginc.dev/members/mohiro/posts/upgrade-mysql
+    volumes:
+      - mysql_volume:/var/lib/mysql
+      - ./scripts:/var/scripts
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+    container_name: "mysql"
+    ports:
+      - "13306:3306"
