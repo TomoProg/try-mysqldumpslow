@@ -1,7 +1,8 @@
 FROM mysql:8.4.3
 LABEL maintainer="TomoProg"
 RUN microdnf update && microdnf install -y \
-	vim-minimal
+	vim-minimal \
+    less
 
 # 設定ファイルの追加
 COPY ./resources/my.cnf /etc/mysql/conf.d/
