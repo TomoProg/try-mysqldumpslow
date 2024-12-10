@@ -14,3 +14,5 @@ docker exec -it mysql /bin/bash
 mysql -h localhost -uroot -p12345678 < /var/scripts/data.sql
 ```
 
+## mysqldumpslowの使い方
+https://qiita.com/TomoProg/items/fe240aa7e717fa8d3f50
